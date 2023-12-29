@@ -1,21 +1,20 @@
-import webpack from "webpack";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import {BuildOptions} from "./types/config";
+import webpack from 'webpack';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { BuildOptions } from './types/config';
 
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
-
   const fileLoader = {
     test: /\.(png|jpe?g|gif|woff|woff2)$/i,
     use: [
       {
-        loader: 'file-loader'
-      }
-    ]
+        loader: 'file-loader',
+      },
+    ],
   };
 
   const svgLoader = {
     test: /\.svg$/,
-    use: ['@svgr/webpack']
+    use: ['@svgr/webpack'],
   };
 
   const babelLoader = {
@@ -25,13 +24,13 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
       loader: 'babel-loader',
       options: {
         presets: ['@babel/preset-env'],
-        plugins: [["i18next-extract", {
-          locales: ["ua", "en"],
-          keyAsDefaultValue: true
-        }]]
-      }
-    }
-  }
+        plugins: [['i18next-extract', {
+          locales: ['ua', 'en'],
+          keyAsDefaultValue: true,
+        }]],
+      },
+    },
+  };
 
   const typescriptLoader = {
     test: /\.tsx?$/,
@@ -44,17 +43,17 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     use: [
       options.isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
       {
-        loader: "css-loader",
+        loader: 'css-loader',
         options: {
           modules: {
             auto: (resPath: string) => Boolean(resPath.includes('.module.')),
             localIdentName: options.isDev
               ? '[path][name]__[local]--[hash:base64:5]'
-              : '[hash:base64:8]'
-          }
-        }
+              : '[hash:base64:8]',
+          },
+        },
       },
-      "sass-loader",
+      'sass-loader',
     ],
   };
 
@@ -63,6 +62,6 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     svgLoader,
     babelLoader,
     typescriptLoader,
-    cssLoader
+    cssLoader,
   ];
 }
