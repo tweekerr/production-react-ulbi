@@ -3,19 +3,17 @@
 @import "themes/light";
 @import "themes/dark";
 
-.app{
+.app {
   font: var(--font-m);
-
   background: var(--bg-color);
   color: var(--primary-color);
-
   min-height: 100vh;
 }
 
-.main{
+.main {
   display: flex;
 }
 
-.content{
+.content {
   flex-grow: 1;
 }
