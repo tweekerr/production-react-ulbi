@@ -1,4 +1,3 @@
-// eslint-disable-next-line react/jsx-intend
 module.exports = {
   env: {
     browser: true,
@@ -25,7 +24,7 @@ module.exports = {
   rules:
         {
           indent: [2, 2],
-          'react/jsx-intend': ['error', 2],
+          'react/jsx-indent': [2, 2],
           'react/jsx-indent-props': [2, 2],
           'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
           'import/no-unresolved': 'off',
