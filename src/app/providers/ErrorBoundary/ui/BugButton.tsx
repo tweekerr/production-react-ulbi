@@ -22,7 +22,7 @@ export const BugButton: FC<BugButtonProps> = (props) => {
       onClick={throwError}
       className={classNames('', {}, [className])}
     >
-      throw error
+      400
     </Button>
   );
 };
