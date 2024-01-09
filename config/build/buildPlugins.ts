@@ -15,15 +15,15 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
       filename: 'css/[name].[contenthash:8].css',
       chunkFilename: 'css/[name].[contenthash:8].css',
     }),
-    new BundleAnalyzerPlugin({ openAnalyzer: false }),
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
     }),
+    new ReactRefreshPlugin(),
   ];
 
   if (isDev) {
-    plugins.push(new ReactRefreshPlugin());
     plugins.push(new webpack.HotModuleReplacementPlugin());
+    plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }));
   }
 
   return plugins;
