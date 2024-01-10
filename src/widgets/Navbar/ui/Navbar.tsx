@@ -14,8 +14,7 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
   return (
     <div className={classNames(cl.navbar, {}, [className])}>
       <div className={cl.links}>
-        <AppLink theme={AppLinkTheme.SECONDARY} to="/" className={cl.mainLink}>{t('main')}</AppLink>
-        <AppLink theme={AppLinkTheme.SECONDARY} to="/about">{t('about')}</AppLink>
+        /
       </div>
     </div>
   );
