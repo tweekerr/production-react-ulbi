@@ -7,5 +7,6 @@
   "toggle": "Перемкнути",
   "not_found_page": "Не знайдено",
   "handled_error": "Йойки! Щось пішло не так (×﹏×)",
-  "update_handler_error_page": "Спробувати знову!"
+  "update_handler_error_page": "Спробувати знову!",
+  "sign_in": "Ввійти"
 }

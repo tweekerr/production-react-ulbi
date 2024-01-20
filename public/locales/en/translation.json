@@ -7,5 +7,6 @@
   "toggle": "Toggle",
   "not_found_page": "Not Found",
   "handled_error": "Whooops! Something went wrong (×﹏×)",
-  "update_handler_error_page": "Try again!"
+  "update_handler_error_page": "Try again!",
+  "sign_in": "Sign In"
 }
