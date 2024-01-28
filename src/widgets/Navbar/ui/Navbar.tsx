@@ -27,7 +27,7 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
         {t('sign_in')}
       </Button>
       <Modal isOpen={isAuthModal} onClose={() => onToggleModal()}>
-        MODAL
+        /
       </Modal>
     </div>
   );
